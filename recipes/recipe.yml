@@ -15,7 +15,7 @@ modules:
   - type: dnf
     repos:
       copr:
-        - alternateved/keyd\
+        - alternateved/keyd
         - scrollwm/packages
         - avengemedia/dms
         - avengemedia/danklinux
