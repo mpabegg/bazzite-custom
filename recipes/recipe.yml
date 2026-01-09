@@ -3,7 +3,7 @@
 name: bazzite-custom
 description: This is my personal Bazzite image.
 
-base-image: ghcr.io/ublue-os/bazzite-gnome
+base-image: ghcr.io/ublue-os/bazzite-dx
 image-version: latest # latest is also supported if you want new updates ASAP
 
 modules:
@@ -30,7 +30,7 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: false # Send notification after install/uninstall is finished (true/false)
+      - notify: true # Send notification after install/uninstall is finished (true/false)
         install: # system flatpaks we want all users to have and not remove
           - com.brave.Browser
           - app.zen_browser.zen
