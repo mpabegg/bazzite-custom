@@ -9,6 +9,7 @@ set $up Up
 set $right Right
 set $term foot
 set $menu dms ipc call spotlight toggle
+set $filemanager nautilus
 
 exec env QT_QPA_PLATFORM=wayland dms run --session
 exec wl-paste --watch cliphist store
@@ -41,12 +42,12 @@ exec wl-paste --watch cliphist store
 #
 # Example configuration:
 #
-#   input type:touchpad {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+input type:touchpad {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+       middle_emulation enabled
+   }
 #
 #   input type:keyboard {
 #       xkb_layout "eu"
@@ -57,8 +58,8 @@ exec wl-paste --watch cliphist store
 
 ### Windows defaults
 default_border pixel 2
-gaps inner 4
-gaps outer 20
+gaps inner 2
+gaps outer 4
 client.focused #15439e #4b4b4b #e0e0e0 #2e9ef4 #15439e
 client.focused_inactive #595959 #3b3b3b #e0e0e0 #2e9ef4 #595959
 client.unfocused #595959 #1b1b1b #e0e0e0 #2e9ef4 #595959
@@ -71,7 +72,7 @@ client.unfocused #595959 #1b1b1b #e0e0e0 #2e9ef4 #595959
 for_window [all] inhibit_idle fullscreen
 
 # Layout settings
-layout_default_width 0.5
+layout_default_width 0.6666667
 layout_default_height 1.0
 layout_widths [0.33333333 0.5 0.666666667 1.0]
 layout_heights [0.33333333 0.5 0.666666667 1.0]
@@ -114,12 +115,12 @@ animations {
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Backspace kill
-    bindsym $mod+Shift+Backspace kill unfocused
-    bindsym $mod+Ctrl+Backspace kill all
+    bindsym $mod+q kill
+    bindsym $mod+Shift+q kill unfocused
+    bindsym $mod+Ctrl+q kill all
 
     # Start your launcher
-    bindsym $mod+r exec $menu
+    bindsym $mod+Space exec $menu
     
     bindsym $mod+e exec $filemanager
 
