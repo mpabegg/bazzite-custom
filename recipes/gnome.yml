@@ -1,0 +1,10 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: my-gnome
+description: This is my personal Bazzite image.
+
+base-image: ghcr.io/ublue-os/bazzite-dx-gnome
+image-version: latest # latest is also supported if you want new updates ASAP
+
+modules:
+  from-file: common/all.yml
