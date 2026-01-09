@@ -3,7 +3,7 @@
 name: my-gnome
 description: This is my personal Bazzite image.
 
-base-image: ghcr.io/ublue-os/bazzite-dx-gnome
+base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest # latest is also supported if you want new updates ASAP
 
 modules:
