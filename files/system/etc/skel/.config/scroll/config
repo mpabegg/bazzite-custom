@@ -7,7 +7,7 @@ set $left Left
 set $down Down
 set $up Up
 set $right Right
-set $term foot
+set $term ghostty
 set $menu dms ipc call spotlight toggle
 set $filemanager nautilus
 
