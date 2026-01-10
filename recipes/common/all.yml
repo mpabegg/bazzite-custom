@@ -8,12 +8,13 @@ modules:
     repos:
       copr:
         - alternateved/keyd
+        - scottames/ghostty
         - scrollwm/packages
         - avengemedia/dms
         - avengemedia/danklinux
     install:
       packages:
-        - foot
+        - ghostty
         - keyd
         - 1password
         - 1password-cli
