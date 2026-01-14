@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: my-kde
+name: bazzite-cosmic-dx
 description: This is my personal Bazzite image.
 
 base-image: ghcr.io/ublue-os/bazzite-dx

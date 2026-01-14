@@ -9,21 +9,18 @@ modules:
       copr:
         - alternateved/keyd
         - scottames/ghostty
-        - scrollwm/packages
-        - avengemedia/dms
-        - avengemedia/danklinux
+        - ryanabx/cosmic-epoch
     install:
       packages:
         - ghostty
         - keyd
         - 1password
         - 1password-cli
-        - scroll
-        - dms
+        - cosmic-desktop
 
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
+      - notify: false # Send notification after install/uninstall is finished (true/false)
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
