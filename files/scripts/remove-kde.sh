@@ -15,3 +15,4 @@ dnf5 group info kde-desktop | \
 dnf5 clean all && \
 rm -rf /var/cache/dnf/*
 
+systemctl disable display-manager && systemctl enable cosmic-greeter.service -f
