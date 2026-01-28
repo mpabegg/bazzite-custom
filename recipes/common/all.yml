@@ -17,6 +17,7 @@ modules:
         - 1password
         - 1password-cli
         - cosmic-desktop
+        - cosmic-desktop-apps
 
   - type: default-flatpaks
     configurations:
