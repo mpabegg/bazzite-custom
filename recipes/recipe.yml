@@ -3,7 +3,7 @@
 name: bazzite-cosmic
 description: This is my personal Bazzite image.
 
-base-image: ghcr.io/ublue-os/bazzite-gnome
+base-image: ghcr.io/ublue-os/bazzite
 image-version: latest # latest is also supported if you want new updates ASAP
 
 modules:
@@ -40,6 +40,7 @@ modules:
           - org.qbittorrent.qBittorrent
           - com.ktechpit.torrhunt
           - dev.zed.Zed
+          - com.spotify.Client
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: systemd
