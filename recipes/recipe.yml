@@ -1,10 +1,50 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: bazzite-cosmic-dx
+name: bazzite-cosmic
 description: This is my personal Bazzite image.
 
-base-image: ghcr.io/ublue-os/bazzite-dx
+base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest # latest is also supported if you want new updates ASAP
 
 modules:
-  - from-file: common/all.yml
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+    
+  - type: dnf
+    repos:
+      copr:
+        - alternateved/keyd
+        - scottames/ghostty
+        - ryanabx/cosmic-epoch
+    install:
+      packages:
+        - ghostty
+        - keyd
+        - 1password
+        - 1password-cli
+        - cosmic-desktop
+
+  - type: default-flatpaks
+    configurations:
+      - notify: false # Send notification after install/uninstall is finished (true/false)
+        scope: system
+        # If no repo information is specified, Flathub will be used by default
+        install: # system flatpaks we want all users to have and not remove
+          - org.mozilla.firefox
+          - org.gnome.Loupe
+          - com.brave.Browser
+          - app.zen_browser.zen
+          - org.videolan.VLC
+          - org.qbittorrent.qBittorrent
+          - com.ktechpit.torrhunt
+          - dev.zed.Zed
+      - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: systemd
+    system:
+      enabled:
+        - keyd.service
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
